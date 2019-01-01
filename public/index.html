@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../style/home.css">
+
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Mapbox -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Imports -->
+    <script type="text/javascript" src="./res/data/data.js"></script>
+    <script type="text/javascript" src="../scripts/env.js"></script>
+
+    <title>Take Me By The Hand</title>
+</head>
+
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <video id="myVideo" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="res/vid/londoneye.webm" type="video/webm"> Sorry, your browser does not support HTML5 video.
+    </video>
+    <audio id="hungry">
+        <source src="./res/sound/hungry.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio id="sad">
+        <source src="./res/sound/sad.wav" type="audio/mpeg"></source>
+    </audio>
+    <audio id="tired">
+        <source src="./res/sound/tired.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio id="romantic">
+        <source src="./res/sound/romantic.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio id="creative">
+        <source src="./res/sound/creative.flac" type="audio/mpeg"></source>
+    </audio>
+    <audio id="adventurous">
+        <source src="./res/sound/adventurous.wav" type="audio/mpeg"></source>
+    </audio>
+
+    <div>
+        <div>
+            <h1>HOW ARE YOU FEELING TODAY?</h1>
+            <div class="grid-container">
+                <div id="adventMood" class="moodsConts" onClick="window.location = 'carousels.html?adventurous';">
+                    <img id="compass" src="./res/img/icons/compass.png"></img>
+                    <img id="arrow" src="./res/img/icons/arrow.png"></img>
+                    <img id="traveler" src="./res/img/icons/traveler.png"></img>
+                </div>
+                <div id="sadMood" class="moodsConts" onClick="window.location = 'carousels.html?sad';">
+                    <img id="sadface" src="./res/img/icons/sadface.png"></img>
+                    <img id="tear" src="./res/img/icons/tear.png"></img>
+                </div>
+                <div id="romanticMood" class="moodsConts" onClick="window.location = 'carousels.html?romantic';">
+                    <img id="heart" src="./res/img/icons/heart.png"></img>
+                    <img id="couple" src="./res/img/icons/couple.png"></img>
+                </div>
+                <div id="hungryMood" class="moodsConts" onClick="window.location = 'carousels.html?hungry';">
+                    <img id="burger1" src="./res/img/icons/burger1.png"></img>
+                    <img id="burger2" src="./res/img/icons/burger2.png"></img>
+                    <img id="burger3" src="./res/img/icons/burger3.png"></img>
+                </div>
+                <div id="tiredMood" class="moodsConts" onClick="window.location = 'carousels.html?tired';">
+                    <div class="Zzz">
+                        <span class="s2">z</span>
+                        <span class="s3">z</span>
+                        <span class="s4">z</span>
+                        <span class="s5">z</span>
+                        <span class="s6">z</span></div>
+                    <img id="tiredMan" src="./res/img/icons/tiredMan.png"></img>
+                </div>
+                <div id="creativeMood" class="moodsConts" onClick="window.location = 'carousels.html?creative';">
+                    <img id="creativeFace" src="./res/img/icons/creativeFace.png"></img>
+                    <img id="gear1" class="spin" src="./res/img/icons/gear.png"></img>
+                    <img id="gear2" class="spin-back" src="./res/img/icons/gear.png"></img>
+                    <img id="gear3" class="spin" src="./res/img/icons/gear.png"></img>
+                </div>
+            </div>
+            <img src="./res/img/icons/soundoff.png" id="sound-icon"></img>
+        </div>
+    </div>
+    <script src="../scripts/home.js"></script>
+    <script src="../scripts/audio.js"></script>
+</body>
+
+</html>

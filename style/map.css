@@ -1,0 +1,71 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  -webkit-transition: width .5s, height .5s, border-radius .5s;
+  transition: width .5s, height .5s, border-radius .5s;
+}
+
+.marker:hover {
+  width: inherit;
+  height: 105px;
+  border-radius: 10%;
+}
+
+.marker-icon-wrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  justify-content: center;
+}
+
+.marker-icon {
+  display: inherit;
+  grid-column: auto;
+  justify-self: center;
+  top: 0%;
+  width: 50px;
+  height: 50px;
+}
+
+.marker-name {
+  display: none;
+  z-index: 3;
+  padding: .2em .4em .2em;
+  font-size: 20px;
+  position: relative;
+  width: 100%;
+  color: WHITE;
+  background-color: BLACK;
+  top: 65%;
+  opacity: 0;
+  text-align: center;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+
+}
+
+.marker-name.hovered {
+  display: block;
+  opacity: 1;
+  top: 0%;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
