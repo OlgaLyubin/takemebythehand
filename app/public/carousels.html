@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../style/app.css">
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Mapbox -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- Imports -->
+  <script type="text/javascript" src="./res/data/data.js"></script>
+
+  <title>Take Me By The Hand</title>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video id="myVideo" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+    <source src="res/vid/londoneye.webm" type="video/webm">
+      Sorry, your browser does not support HTML5 video.
+    </video>
+
+    <!-- Main content -->
+    <h1 class="moodTitle"></h1>
+    <div>
+      <a href="index.html"><img src="./res/img/icons/Home.png" id="homeIcon"></img></a>
+      <a href="map.html"><img src="./res/img/icons/map.png" id="mapIcon"></img></a>
+      <a><img src="./res/img/icons/liked.png" id="likedIcon" onclick="window.location = 'carousels.html?isLiked';"></img></a>
+      <a><img src="./res/img/icons/wishlist.png" id="wishlistIcon" onclick="window.location = 'carousels.html?isVisited';"></img></a>
+
+      <!-- Carousel  which will be filled dynamically-->
+      <div id="carousel" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="changeSettings" tabindex="-1" role="dialog" aria-labelledby="modal-settings" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-place_name">'place name' settings</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5 class="text-center">Do I want to visit this place?</h5>
+            <p id="modal-mood" class="text-center">
+              <img class="btn btn-sm p-0 rounded-circle mx-auto position-relative visited-yes" width="50px" height="50px" src="./res/img/icons/success.svg">
+              <img class="btn btn-sm p-0 rounded-circle mx-auto position-relative visited-no" width="50px" height="50px" src="./res/img/icons/error.svg">
+            </p>
+            <hr>
+            <h5 class="text-center">Do I like this place?</h5>
+            <p class="text-center">
+              <img class="btn btn-sm p-0 rounded-circle mx-auto position-relative liked-yes" width="50px" height="50px" src="./res/img/icons/success.svg">
+              <img class="btn btn-sm p-0 rounded-circle mx-auto position-relative liked-no" width="50px" height="50px" src="./res/img/icons/error.svg">
+            </p>
+            <hr>
+            <h5 class="text-center">How does this place makes me feel?</h5>
+            <p class="text-center">
+              <div class="grid-container-modal">
+                <a id="adventurous" class="moodsConts adventMood modal-mood" >
+                  <img class="compass" src="./res/img/icons/compass.png">
+                  <img class="arrow" src="./res/img/icons/arrow.png">
+                  <img class="traveler" src="./res/img/icons/traveler.png">
+                </a>
+                <a id="sad" class="moodsConts sadMood modal-mood" >
+                  <img class="sadface" src="./res/img/icons/sadface.png">
+                  <img class="tear" src="./res/img/icons/tear.png">
+                </a>
+                <a id="romantic" class="moodsConts romanticMood modal-mood" >
+                  <img class="heart" src="./res/img/icons/heart.png">
+                  <img class="couple" src="./res/img/icons/couple.png">
+                </a>
+                <a id="hungry" class="moodsConts hungryMood modal-mood" >
+                  <img class="burger1" src="./res/img/icons/burger1.png">
+                  <img class="burger2" src="./res/img/icons/burger2.png">
+                  <img class="burger3" src="./res/img/icons/burger3.png">
+                </a>
+                <a id="tired" class="moodsConts tiredMood modal-mood" >
+                  <div class="Zzz">
+                    <span class="s2">z</span>
+                    <span class="s3">z</span>
+                    <span class="s4">z</span>
+                    <span class="s5">z</span>
+                    <span class="s6">z</span>
+                  </div>
+                  <img class="tiredMan" src="./res/img/icons/tiredMan.png">
+                </a>
+                <a id="creative" class="moodsConts creativeMood modal-mood" >
+                  <img class="creativeFace" src="./res/img/icons/creativeFace.png">
+                  <img class="gear1 spin" src="./res/img/icons/gear.png">
+                  <img class="gear2 spin-back" src="./res/img/icons/gear.png">
+                  <img class="gear3 spin" src="./res/img/icons/gear.png">
+                </a>
+              </div>
+              <span class="mood-error">Please select at least one mood per place.</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/carousels.js"></script>
+
+    <!-- Modal Script -->
+    <script src='../scripts/modal.js'></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+  </body>
+  </html>

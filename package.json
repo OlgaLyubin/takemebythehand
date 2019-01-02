@@ -1,0 +1,23 @@
+{
+  "name": "takemebythehand",
+  "version": "1.0.0",
+  "description": "A London interactive tour",
+  "main": "index.js",
+  "homepage": "https://olgaLyubin.github.io//takemebythehand/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlgaLyubin/takemebythehand.git"
+  },
+  "author": "@OlgaLyubin, @AlbertQM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OlgaLyubin/takemebythehand/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}

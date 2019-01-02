@@ -1,0 +1,631 @@
+@font-face {
+  font-family: nunito;
+  src: url(../public/res/fonts/Nunito-Regular.ttf);
+}
+
+h1{
+  background-color: rgba(255,255,255, 0.4);
+  font-family: 'nunito';
+  color: rgb(56, 63, 73);
+  text-align: center;
+  padding: 15px;
+  width: 45%;
+  border-radius: 10px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 120px;
+}
+
+.moodTitle {
+  font-family: 'nunito' !important;
+  color: rgb(56, 63, 73) !important;
+  width: 52vw !important;
+  font-size: 32px;
+  position: absolute;
+  top: 5vh;
+  left: 25vw;
+}
+
+.moodsConts {
+  border-radius: 15px;
+}
+
+/*  - - - - Links - - - - */
+
+.link-wrapper {
+  position: absolute;
+  display: grid;
+  grid-template-rows: repeat(3, 100px);
+  justify-content: center;
+  z-index: 5;
+}
+
+.home-btn {
+  opacity: 0.7;
+}
+
+.home-btn > img {
+  width: 100px;
+  height: 100px;
+}
+
+.home-btn:hover {
+  opacity: .9;
+}
+
+.like-btn {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.like-btn > img {
+  width: 100px;
+  height: 100px;
+}
+
+.like-btn:hover {
+  opacity: .9;
+}
+
+.wish-btn {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.wish-btn > img {
+  width: 100px;
+  height: 100px;
+}
+
+.wish-btn:hover {
+  opacity: .9;
+}
+
+/*  - - - - Moods - - - - */
+
+.adventMood {
+  background-color: rgba(66, 173, 244, 0.65);
+}
+
+.adventMood:hover, .adventMood.hovered  {
+  background-color: rgba(66, 173, 244, 0.85);
+}
+
+.sadMood {
+  background-color: rgba(244, 205, 65, 0.65);
+}
+
+.sadMood:hover, .sadMood.hovered {
+  background-color: rgba(244, 205, 65, 0.85);
+}
+
+.romanticMood {
+  background-color: rgba(218, 118, 104, 0.65);
+}
+
+.romanticMood:hover, .romanticMood.hovered {
+  background-color: rgba(218, 118, 104, 0.85);
+}
+
+.hungryMood {
+  background-color: rgba(118, 69, 209, 0.65);
+}
+
+.hungryMood:hover, .hungryMood.hovered {
+  background-color: rgba(118, 69, 209, 0.85);
+}
+
+.tiredMood {
+  background-color: rgba(56, 181, 97, 0.65);
+}
+
+.tiredMood:hover, .tiredMood.hovered {
+  background-color: rgba(56, 181, 97, 0.85);
+}
+
+.creativeMood {
+  background-color: rgba(229, 150, 22, 0.65);
+}
+
+.creativeMood:hover, .creativeMood.hovered {
+  background-color: rgba(229, 150, 22, 0.85);
+}
+
+.grid-container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(6, 220px);
+  grid-template-rows: 220px;
+  grid-gap: 10px;
+  justify-content: center;
+  z-index: 5;
+  transform: scale(0.3) translateY(-100%) translateX(20vw);
+  background: rgba(245, 245, 245, .9);
+  padding: 3%;
+  border-radius: 5%;
+}
+
+.grid-container-modal {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(6, 220px);
+  grid-template-rows: 220px;
+  grid-gap: 10px;
+  justify-content: center;
+  z-index: 5;
+  transform: scale(0.3) translateY(-160%) translateX(-110%);
+  background: rgba(245, 245, 245, .9);
+  padding: 3%;
+  border-radius: 5%;
+}
+
+.sadface {
+  position: absolute;
+  width: 140px;
+  display: block;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.tear {
+  position: absolute;
+    width: 100px;
+    height: 50px;
+    margin-left: 61px;
+  margin-top: 92px;
+  float: left;
+}
+
+.sadMood:hover > .tear, .sadMood.hovered > .tear { animation: crying 1.5s infinite; }
+
+@keyframes crying {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.couple {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: block;
+  margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding-right: 10px;
+}
+
+.heart {
+    width: 205px;
+    height: 205px;
+    position: absolute;
+    display: block;
+  margin-left: 5px;
+}
+
+.romanticMood:hover > .heart, .romanticMood.hovered > .heart {
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+
+.burger1, .burger2, .burger3 {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+  margin-left: 25px;
+    margin-top: 25px;
+
+}
+
+.hungryMood:hover > .burger1, .hungryMood.hovered > .burger1 {
+  animation: eating 4s infinite;
+}
+
+.hungryMood:hover > .burger2, .hungryMood.hovered > .burger2 {
+  animation: eating 4s infinite;
+  animation-delay: 1s;
+}
+
+.hungryMood:hover > .burger3, .hungryMood.hovered > .burger3 {
+  animation: eating 4s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes eating  {
+  0% {
+    opacity:1;
+  }
+  33% {
+    opacity:0;
+  }
+  66% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.tiredMan{
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.Zzz span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  text-align: center;
+  position: absolute;
+  opacity: 0;
+  font-size: 35px;
+  color: .27590d;
+  line-height: 15px;
+}
+
+.Zzz .s2 {
+  margin-left: 62px;
+  margin-top: 31px;}
+.Zzz .s3 {
+  margin-left: 85px;
+  margin-top: 35px;}
+.Zzz .s4 {
+  margin-left: 105px;
+  margin-top: 49px;}
+.Zzz .s5 {
+  margin-left: 80px;
+  margin-top: 60px;}
+.Zzz .s6 {
+  margin-left: 100px;
+  margin-top: 70px;}
+
+.Zzz {
+  height: 60px;
+  width: 80px;
+  position: absolute;
+}
+
+@keyframes zzz  {
+  0% {opacity: 0; transform: scale3d(.3, .3, .3) rotate(20deg);}
+  50% {opacity: 1;}
+  80% {transform: translateY(-30px) translateX(-20px) rotate(-10deg); opacity: 0;}
+  100% {opacity:0;}
+}
+
+.creativeFace {
+  width: 170px;
+  position: absolute;
+  margin-left: 30px;
+    margin-top: 20px;
+}
+
+.tiredMood:hover > .Zzz span, .tiredMood.hovered > .Zzz span {
+  animation: zzz 2s linear infinite;
+}
+
+.gear1, .gear2, .gear3 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.gear1 {
+    margin-left: 52px;
+    margin-top: 73px;
+}
+
+.gear2 {
+  margin-left: 73px;
+    margin-top: 40px;
+}
+
+.gear3 {
+    margin-left: 112px;
+    margin-top: 46px;
+}
+
+.creativeMood:hover > .spin, .creativeMood.hovered > .spin {
+  animation:spin 4s linear infinite;
+}
+
+.creativeMood:hover > .spin-back, .creativeMood.hovered > .spin-back {
+  animation:spin-back 4s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes spin { 100% { transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes spin-back { 100% { transform: rotate(-360deg); } }
+@keyframes spin-back { 100% { transform: rotate(-360deg); } }
+@keyframes spin-back { 100% { transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+.compass {
+    width: 140px;
+    height: 155px;
+    position: absolute;
+  margin-left: 40px;
+    margin-top: 25px;
+}
+
+.traveler {
+    width: 100px;
+    height: 120px;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 20px;
+}
+
+.arrow {
+    width: 40px;
+    height: 90px;
+    position: absolute;
+  margin-left: 90px;
+    margin-top: 73px;
+}
+
+.adventMood:hover > .arrow, .adventMood.hovered > .arrow {
+  animation: rotateCompass 6s alternate infinite;
+}
+
+@keyframes rotateCompass{
+  0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(540deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+/*  - - - - CAROUSEL PAGE: - - - - */
+
+/*  - - - - Modal - - - - */
+
+.modal {
+  font-family: 'nunito';
+}
+
+.modal-mood {
+  background: transparent;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.mood-error {
+  position: relative;
+  top: 50px;
+  left: 35px;
+  color: red;
+  display: none;
+}
+
+/*  - - - - Map Markers - - - - */
+
+.icon-hover {
+  zoom: 1.1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'nunito';
+
+}
+
+#myVideo {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   z-index: -1000;
+   overflow: hidden;
+   -webkit-filter: blur(20px);
+   -moz-filter: blur(125px);
+   -o-filter: blur(125px);
+   -ms-filter: blur(125px);
+   filter: blur(5px);
+}
+
+#sound-icon {
+	width: 4vw;
+	opacity: 0.45;
+	float: right;
+	margin-right: 10px;
+}
+
+/*----- Carousel and slides ------*/
+#carousel {
+  width: 77vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.carouselElement {
+  background-color: rgba(255,255,255, 0.4);
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 11px;
+  height: 65vh !important;
+  position: relative;
+  margin-top: 20vh;
+  width: 24vw !important;
+}
+
+.slides {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 4%;
+}
+
+/*----- Icons on carousel and map pages ------*/
+#homeIcon, #mapIcon, #likedIcon, #wishlistIcon {
+  width: 7vw;
+  opacity: 0.45;
+}
+
+#homeIcon {
+  margin-top: 1vh;
+  margin-left: 1vw;
+  position: absolute;
+}
+
+#likedIcon {
+  position: absolute;
+  margin-top: 14vh;
+  margin-left: 1vw;
+  float: left;
+}
+
+#wishlistIcon {
+  position: absolute;
+  margin-top: 27vh;
+  margin-left: 1vw;
+  float: left;
+}
+
+#mapIcon {
+  float: right;
+  margin-top: 1vh;
+  margin-right: 1vw;
+}
+
+#mapIcon:hover {
+	opacity: 0.7;
+}
+
+#homeIcon:hover {
+	opacity: 0.7;
+}
+
+#likedIcon:hover {
+	opacity: 0.7;
+}
+
+#wishlistIcon:hover {
+	opacity: 0.7;
+}
+
+/*----- Stuff on individual carousel slides ------*/
+.settingsicon, .clock, .pound {
+  width: 40px;
+  opacity: 0.45;
+  position: absolute;
+  bottom: 3%;
+}
+
+.clock {
+  right: 29%;
+}
+.settingsicon {
+  right: 42%;
+}
+.pound {
+  right: 55%;
+}
+
+.settingsicon:hover {
+	opacity: 0.7;
+}
+.clock:hover {
+  opacity: 0.7;
+}
+.pound:hover {
+  opacity: 0.7;
+}
+
+.placeName {
+  font-family: 'nunito';
+  color: rgb(56, 63, 73);
+  text-align: center;
+  padding-top: 5%;
+}
+
+p {
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  font-family: 'nunito';
+}
+
+.carouselPics {
+  width: 24vw;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 11px 11px 0 0 ;
+}
+
+/*----- Animation test ------*/
+.animheart {
+	width: 100px;
+	position: absolute;
+	animation: flying 3s infinite;
+	margin-left: 48%;
+}
+
+@keyframes flying {
+    0%   {bottom: 0%; }
+    100% {bottom: 100%;}
+}
+
+.tooltip > .tooltip-inner {
+  background-color: #313333;
+  font-family: 'nunito';
+}
+
+.emptyCarousel {
+  background-color: rgba(255,255,255, 0.4);
+	font-family: 'nunito';
+	color: rgb(56, 63, 73);
+	text-align: center;
+	padding: 15px;
+	border-radius: 10px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 40vh;
+}

@@ -1,2 +1,3 @@
-# takemebythehand
-A London interactive tour
+# Take me by the Hand.
+
+A London interactive tour guide.
